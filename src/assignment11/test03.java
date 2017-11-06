@@ -1,9 +1,9 @@
 package assignment11;
 
 /*
- * 3. дһ���������ж�һ������֤�ŵ��Ա�����֤�ĵ�����2λΪż��ʱ��ʾŮ��������֤��15λ��18λ��
+ * 3. 写一个方法，判断一个身份证号的性别，身份证的倒数第2位为偶数时表示女。（身份证分15位和18位）
  */
-
+//使用charAt即可
 public class test03 {
 	public static void main(String[] args) {
 		String str = "150196610270132";
