@@ -71,7 +71,7 @@ public class Game {
 			if(a == rand) {
 				System.out.println("²Â¶ÔÁË£¡");
 				userScore+=p.score;
-				ts.remove(p);
+				it.remove();
 				numOfPrize--;
 				f = true;
 				break;
