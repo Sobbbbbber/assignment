@@ -1,6 +1,7 @@
 package assignment18;
 
 import java.util.Iterator;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.TreeSet;
 
@@ -48,7 +49,7 @@ public class Game {
 	
 	public int random() {
 		int a = 0;
-		a = (int)(Math.random()*10) +1;
+		a = new Random().nextInt(ts.size());
 		return a;
 		
 	}
