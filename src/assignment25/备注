@@ -1,0 +1,6 @@
+1.操作scannr scan = new scanner(system.in);  慎选 scan.close();  关闭后,后面的输入会出错;
+
+2.在一个工程中操作数据库时,关闭数据库时要慎重,
+3.操作数据库之前,要想一想数据库是否还开着
+
+4.此个项目,运行时需要加入mysql-connection-jdbc-jar包
