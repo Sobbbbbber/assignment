@@ -14,7 +14,7 @@ public class test05 {
 		for (int i = 0; i < str.length()-1; i++) {
 			char c1 = str.charAt(i);
 			char c2 = str.charAt(i+1);
-			if(c1 == 'ÖÐ' && c2 == '¹ú') {
+			if(c1 == 'ä¸­' && c2 == 'å›½') {
 				count ++;
 			}
 		}	
