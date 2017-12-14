@@ -1,7 +1,8 @@
-package assignment25;
+ package assignment25;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 
@@ -9,6 +10,8 @@ import java.util.Scanner;
 public class AutoSale {
 	 public JDBC j;
 	 public int money;
+   	 Map<Integer,HashMap<String,String>> mapDict = new HashMap<Integer,HashMap<String,String>>(); 
+   	 public int confirm=0;
 	
 	 AutoSale(){
 		 j = new JDBC();
@@ -46,21 +49,17 @@ public class AutoSale {
 	 
 	 
 	 void display() {
-			String sql = "select * from autosale";
-			ArrayList<HashMap<String,String>> list = j.query(sql);
-			
-			
-			System.out.println("id  name  num  price");
-			for(int i = 0; i < list.size(); i++) {
-				HashMap<String, String > map = list.get(i);
-				System.out.print(map.get("id")+"  ");
-				System.out.print(map.get("name")+"  ");
-				System.out.print(map.get("num")+"  ");
-				System.out.println(map.get("price")+"  ");
-
+	    String sql = "select * from autosale";
+		ArrayList<HashMap<String,String>> list = j.query(sql);			
+		System.out.println("id  name  num  price");
+		for(int i = 0; i < list.size(); i++) {
+			HashMap<String, String > map = list.get(i);
+			System.out.print((i+1)+"  "+map.get("id")+"  ");
+			System.out.print(map.get("name")+"  ");
+			System.out.print(map.get("num")+"  ");
+			System.out.println(map.get("price")+"  ");
+			mapDict.put(i+1, map);
 			}
-		 
-		 
 	 }
 	 
 	 
@@ -68,8 +67,10 @@ public class AutoSale {
 		 System.out.println("please input the id");
 		 Scanner scan1 = new Scanner(System.in);
 		 int id = scan1.nextInt();
-	
 		 System.out.println(id);
+		 
+		 //È·ÈÏ¹ºÂò£¡£¡£¡
+		 
 		 String sql = "select * from autosale where id = "+id;
 		 ArrayList<HashMap<String, String>> list1 = j.query(sql);
 //		 System.out.println(list.size());
